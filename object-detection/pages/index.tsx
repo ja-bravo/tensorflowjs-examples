@@ -27,8 +27,8 @@ const Home: NextPage = () => {
       const imageTensor = await tf.browser.fromPixelsAsync(canvas, 3);
 
       const predictions = await model?.detect(imageTensor)!;
-      console.log(predictions);
-
+      alert(`I've found ${predictions.length} objects! Look in your console`);
+      console.log(predictions.map((p) => `${p.class}: ${(p.score * 100).toFixed(2)}% probability`));
       ctx.lineWidth = 20;
       ctx.strokeStyle = '#4ade80';
 
@@ -68,7 +68,9 @@ const Home: NextPage = () => {
           }}
         />
       </button>
-      <canvas id="canvas" className="w-full h-full bg-red-50" />
+      <div className="w-full flex justify-center">
+        <canvas id="canvas" className="w-[1200px] bg-red-50" />
+      </div>
     </div>
   );
 };
