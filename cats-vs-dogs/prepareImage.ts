@@ -1,5 +1,5 @@
-import * as tf from '@tensorflow/tfjs-node-gpu';
-import { Tensor3D } from '@tensorflow/tfjs-node-gpu';
+import * as tf from '@tensorflow/tfjs-node';
+import { Tensor3D } from '@tensorflow/tfjs-node';
 import { readFileSync } from 'fs';
 
 

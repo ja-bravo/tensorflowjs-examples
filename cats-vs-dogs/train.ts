@@ -1,5 +1,5 @@
-import * as tf from '@tensorflow/tfjs-node-gpu';
-import { Tensor3D } from '@tensorflow/tfjs-node-gpu';
+import * as tf from '@tensorflow/tfjs-node';
+import { Tensor3D } from '@tensorflow/tfjs-node';
 import fg from 'fast-glob';
 import path from 'path';
 import { prepareImage } from './prepareImage';
@@ -11,14 +11,10 @@ export const enum Labels {
 
 const run = async () => {
   const files = fg.sync(path.join(__dirname, './train/*.jpg'));
-  tf.util.shuffle(files);
-
-  const filesToUse = files;
-
   const labels: Labels[] = [];
   const images: Tensor3D[] = [];
 
-  for (const file of filesToUse) {
+  for (const file of files) {
     const image = prepareImage(file);
 
     const fileName = file.split('/').at(-1);
