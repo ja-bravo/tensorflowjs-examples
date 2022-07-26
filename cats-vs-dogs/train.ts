@@ -69,7 +69,7 @@ const run = async () => {
         onEpochEnd: async (_, logs: { val_acc: number }) => {
           if (logs.val_acc > bestValAcc) {
             console.log('Saving model', logs.val_acc * 100);
-            model.save(`file://${path.join(__dirname, 'best_model')}`);
+            model.save(`file://${path.join(__dirname, 'training_model')}`);
             bestValAcc = logs.val_acc;
           }
         },

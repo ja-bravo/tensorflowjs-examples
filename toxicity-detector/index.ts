@@ -1,4 +1,4 @@
-import '@tensorflow/tfjs-node-gpu';
+import '@tensorflow/tfjs-node';
 import * as toxicity from '@tensorflow-models/toxicity';
 import { printTable } from 'console-table-printer';
 

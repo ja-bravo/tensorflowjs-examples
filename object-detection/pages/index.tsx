@@ -69,7 +69,7 @@ const Home: NextPage = () => {
         />
       </button>
       <div className="w-full flex justify-center">
-        <canvas id="canvas" className="w-[1200px] bg-red-50" />
+        <canvas id="canvas" className="max-w-[600px] bg-red-50" />
       </div>
     </div>
   );
